@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,60 +6,54 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 92%;
+    --background: 30 10% 5%;
+    --foreground: 40 20% 90%;
 
-    --card: 222 40% 10%;
-    --card-foreground: 210 40% 92%;
+    --card: 30 8% 10%;
+    --card-foreground: 40 20% 90%;
 
-    --popover: 222 40% 10%;
-    --popover-foreground: 210 40% 92%;
+    --popover: 30 8% 10%;
+    --popover-foreground: 40 20% 90%;
 
-    --primary: 38 92% 55%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 38 50% 50%;
+    --primary-foreground: 30 10% 5%;
 
-    --secondary: 222 30% 16%;
-    --secondary-foreground: 210 40% 85%;
+    --secondary: 30 6% 15%;
+    --secondary-foreground: 40 15% 80%;
 
-    --muted: 222 25% 14%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 30 5% 12%;
+    --muted-foreground: 30 10% 50%;
 
-    --accent: 38 70% 45%;
-    --accent-foreground: 222 47% 6%;
+    --accent: 38 45% 42%;
+    --accent-foreground: 30 10% 5%;
 
     --destructive: 0 72% 55%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 20% 98%;
 
-    --border: 222 25% 18%;
-    --input: 222 25% 18%;
-    --ring: 38 92% 55%;
+    --border: 30 8% 18%;
+    --input: 30 8% 18%;
+    --ring: 38 50% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
 
-    --sidebar-background: 222 40% 8%;
-    --sidebar-foreground: 210 40% 85%;
-    --sidebar-primary: 38 92% 55%;
-    --sidebar-primary-foreground: 222 47% 6%;
-    --sidebar-accent: 222 30% 16%;
-    --sidebar-accent-foreground: 210 40% 85%;
-    --sidebar-border: 222 25% 18%;
-    --sidebar-ring: 38 92% 55%;
+    --sidebar-background: 30 8% 8%;
+    --sidebar-foreground: 40 15% 85%;
+    --sidebar-primary: 38 50% 50%;
+    --sidebar-primary-foreground: 30 10% 5%;
+    --sidebar-accent: 30 6% 15%;
+    --sidebar-accent-foreground: 40 15% 85%;
+    --sidebar-border: 30 8% 18%;
+    --sidebar-ring: 38 50% 50%;
 
-    /* Custom tokens */
-    --gradient-amber: linear-gradient(135deg, hsl(38, 92%, 55%), hsl(28, 95%, 50%));
-    --gradient-surface: linear-gradient(180deg, hsl(222, 40%, 10%), hsl(222, 47%, 6%));
-    --shadow-glow: 0 0 40px hsl(38, 92%, 55%, 0.15);
-    --shadow-card: 0 4px 24px hsl(222, 47%, 2%, 0.5);
-
-    /* Rating colors */
-    --rating-excellent: 142 70% 45%;
-    --rating-good: 80 60% 45%;
-    --rating-average: 45 90% 50%;
-    --rating-poor: 15 85% 55%;
-    --rating-bad: 0 72% 55%;
+    --gold: 38 50% 50%;
+    --gold-light: 38 55% 65%;
+    --cream: 40 30% 92%;
+    --charcoal: 30 10% 8%;
+    --charcoal-light: 30 8% 14%;
   }
 }
 
@@ -79,22 +73,55 @@
 }
 
 @layer utilities {
-  .text-gradient-amber {
-    background: var(--gradient-amber);
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(38, 55%, 65%), hsl(38, 50%, 50%), hsl(38, 55%, 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-gradient-surface {
-    background: var(--gradient-surface);
+  .border-gold {
+    border-color: hsl(38, 50%, 50%);
   }
 
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
+  .bg-gold {
+    background-color: hsl(38, 50%, 50%);
   }
 
-  .shadow-card {
-    box-shadow: var(--shadow-card);
+  .text-gold {
+    color: hsl(38, 50%, 50%);
   }
+
+  .text-cream {
+    color: hsl(40, 30%, 92%);
+  }
+
+  .bg-charcoal {
+    background-color: hsl(30, 10%, 8%);
+  }
+
+  .line-gold {
+    background: linear-gradient(90deg, transparent, hsl(38, 50%, 50%), transparent);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(30, 10%, 5%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(38, 50%, 50%);
+  border-radius: 3px;
 }
