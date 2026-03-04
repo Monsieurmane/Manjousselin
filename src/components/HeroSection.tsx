@@ -7,15 +7,13 @@ export const HeroSection = () => {
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background z-10" />
-      
-      {/* Decorative grid lines */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-foreground" />
-        <div className="absolute top-0 left-2/4 w-px h-full bg-foreground" />
-        <div className="absolute top-0 left-3/4 w-px h-full bg-foreground" />
-      </div>
+      {/* Background image */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background z-10" />
 
       <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
         <motion.div
@@ -36,13 +34,13 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="font-heading text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] mb-8"
         >
-          <span className="text-cream">L'Art de</span>
+          <span className="text-foreground">L'Art de</span>
           <br />
           <span className="text-gradient-gold italic font-display text-6xl md:text-8xl lg:text-9xl">
             Sublimer
           </span>
           <br />
-          <span className="text-cream">vos Espaces</span>
+          <span className="text-foreground">vos Espaces</span>
         </motion.h1>
 
         <motion.p
@@ -69,7 +67,7 @@ export const HeroSection = () => {
           </a>
           <a
             href="#realisations"
-            className="px-10 py-4 border border-border text-foreground font-body text-xs tracking-[0.2em] uppercase hover:border-primary hover:text-primary transition-all duration-300"
+            className="px-10 py-4 border border-foreground/30 text-foreground font-body text-xs tracking-[0.2em] uppercase hover:border-primary hover:text-primary transition-all duration-300"
           >
             Nos Réalisations
           </a>

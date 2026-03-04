@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <footer className="py-12 px-6 border-t border-border">
       <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <a href="#accueil" className="font-display text-xl tracking-widest text-gradient-gold uppercase">
+        <a href="#accueil" className="font-body text-lg tracking-[0.25em] text-gradient-gold uppercase font-medium">
           Manejousselin
         </a>
         <p className="font-body text-xs text-muted-foreground tracking-wider">

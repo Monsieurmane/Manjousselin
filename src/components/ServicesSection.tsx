@@ -65,7 +65,7 @@ export const ServicesSection = () => {
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Ce que nous offrons
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-light text-cream mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl font-light text-foreground mb-6">
             Nos <span className="italic font-display text-gradient-gold">Services</span>
           </h2>
           <div className="w-16 h-px line-gold mx-auto" />
@@ -90,7 +90,7 @@ export const ServicesSection = () => {
                 strokeWidth={1}
                 className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300"
               />
-              <h3 className="font-heading text-xl text-cream mb-3">{s.title}</h3>
+              <h3 className="font-heading text-xl text-foreground mb-3">{s.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed font-light">
                 {s.description}
               </p>

@@ -23,7 +23,7 @@ export const AboutSection = () => {
             <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
               À propos
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl font-light text-cream mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl font-light text-foreground mb-6">
               L'Excellence du{" "}
               <span className="italic font-display text-gradient-gold">Design Africain</span>
             </h2>
@@ -66,7 +66,7 @@ export const AboutSection = () => {
                   strokeWidth={1}
                   className="text-primary mx-auto mb-4"
                 />
-                <p className="font-display text-4xl text-cream mb-2">{s.value}</p>
+                <p className="font-display text-4xl text-foreground mb-2">{s.value}</p>
                 <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
                   {s.label}
                 </p>

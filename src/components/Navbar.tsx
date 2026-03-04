@@ -30,7 +30,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="container max-w-7xl mx-auto flex items-center justify-between py-5 px-6">
-        <a href="#accueil" className="font-display text-2xl md:text-3xl tracking-widest text-gradient-gold uppercase">
+        <a href="#accueil" className="font-body text-xl md:text-2xl tracking-[0.25em] text-gradient-gold uppercase font-medium">
           Manejousselin
         </a>
 

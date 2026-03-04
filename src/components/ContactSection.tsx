@@ -25,7 +25,7 @@ export const ContactSection = () => {
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Contactez-nous
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-light text-cream mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl font-light text-foreground mb-6">
             Parlons de votre{" "}
             <span className="italic font-display text-gradient-gold">Projet</span>
           </h2>
