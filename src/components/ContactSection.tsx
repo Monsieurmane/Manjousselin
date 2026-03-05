@@ -47,9 +47,8 @@ export const ContactSection = () => {
             </p>
             <div className="space-y-6">
               {[
-                { icon: MapPin, text: "Dakar, Sénégal — Quartier Almadies" },
-                { icon: Mail, text: "contact@manejousselin.com" },
-                { icon: Phone, text: "+221 33 800 00 00" },
+                { icon: Mail, text: "consult@manejousselin.com" },
+                { icon: Phone, text: "+49 155 68 58 00 42" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-4">
                   <item.icon size={18} strokeWidth={1} className="text-primary" />
