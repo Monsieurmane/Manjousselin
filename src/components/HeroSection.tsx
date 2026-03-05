@@ -69,7 +69,7 @@ export const HeroSection = () => {
             href="#realisations"
             className="px-10 py-4 border border-foreground/30 text-foreground font-body text-xs tracking-[0.2em] uppercase hover:border-primary hover:text-primary transition-all duration-300"
           >
-            Nos Réalisations
+            Nos Compétences
           </a>
         </motion.div>
 
