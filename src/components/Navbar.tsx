@@ -35,12 +35,12 @@ export const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-10">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="font-body text-[10px] lg:text-xs tracking-[0.15em] lg:tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 {l.label}
               </a>

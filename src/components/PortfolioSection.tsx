@@ -42,7 +42,7 @@ export const PortfolioSection = () => {
             Portfolio
           </p>
           <h2 className="font-heading text-3xl md:text-5xl font-light text-foreground mb-6">
-            Nos <span className="italic font-display text-gradient-gold">Réalisations</span>
+            Nos <span className="italic font-display text-gradient-gold">Compétences</span>
           </h2>
           <div className="w-16 h-px line-gold mx-auto" />
         </motion.div>
