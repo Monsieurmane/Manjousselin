@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const HeroSection = () => {
+  const { lang, t } = useLanguage();
+  const h = t.hero;
+
   return (
     <section
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
       />
-      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background z-10" />
 
       <div className="relative z-20 text-center px-4 md:px-6 max-w-5xl mx-auto">
@@ -24,7 +26,7 @@ export const HeroSection = () => {
         >
           <div className="w-20 h-px line-gold mx-auto mb-8 md:mb-10" />
           <p className="font-body text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.35em] uppercase text-muted-foreground mb-4 md:mb-6">
-            Design d'Intérieur — Dakar, Sénégal
+            {h.subtitle[lang]}
           </p>
         </motion.div>
 
@@ -34,13 +36,13 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="font-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] mb-6 md:mb-8"
         >
-          <span className="text-foreground">L'Art de</span>
+          <span className="text-foreground">{h.line1[lang]}</span>
           <br />
           <span className="text-gradient-gold italic font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl">
-            Sublimer
+            {h.line2[lang]}
           </span>
           <br />
-          <span className="text-foreground">vos Espaces</span>
+          <span className="text-foreground">{h.line3[lang]}</span>
         </motion.h1>
 
         <motion.p
@@ -49,8 +51,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="font-body text-[11px] sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed font-light mb-8 md:mb-12"
         >
-          De la visualisation 3D à la sélection minutieuse des matériaux, nous concevons
-          des intérieurs d'exception qui reflètent votre identité.
+          {h.desc[lang]}
         </motion.p>
 
         <motion.div
@@ -63,13 +64,13 @@ export const HeroSection = () => {
             href="#contact"
             className="group px-6 sm:px-10 py-3 sm:py-4 bg-primary text-primary-foreground font-body text-[10px] sm:text-xs tracking-[0.2em] uppercase hover:bg-primary/90 transition-all duration-300"
           >
-            Prendre Rendez-vous
+            {h.cta1[lang]}
           </a>
           <a
             href="#realisations"
             className="px-6 sm:px-10 py-3 sm:py-4 border border-foreground/30 text-foreground font-body text-[10px] sm:text-xs tracking-[0.2em] uppercase hover:border-primary hover:text-primary transition-all duration-300"
           >
-            Nos Compétences
+            {h.cta2[lang]}
           </a>
         </motion.div>
 

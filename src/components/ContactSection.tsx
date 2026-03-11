@@ -2,13 +2,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const ContactSection = () => {
   const [form, setForm] = useState({ nom: "", email: "", message: "" });
+  const { lang, t } = useLanguage();
+  const c = t.contact;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Merci ! Votre message a bien été envoyé.");
+    toast.success(c.toast[lang]);
     setForm({ nom: "", email: "", message: "" });
   };
 
@@ -23,17 +26,16 @@ export const ContactSection = () => {
           className="text-center mb-12 md:mb-20"
         >
           <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Contactez-nous
+            {c.subtitle[lang]}
           </p>
           <h2 className="font-heading text-3xl md:text-5xl font-light text-foreground mb-6">
-            Parlons de votre{" "}
-            <span className="italic font-display text-gradient-gold">Projet</span>
+            {c.title[lang]}{" "}
+            <span className="italic font-display text-gradient-gold">{c.titleHighlight[lang]}</span>
           </h2>
           <div className="w-16 h-px line-gold mx-auto" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
-          {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -42,8 +44,7 @@ export const ContactSection = () => {
             className="space-y-8 md:space-y-10"
           >
             <p className="font-body text-xs md:text-sm text-muted-foreground leading-[1.8] font-light">
-              Chaque projet commence par une conversation. Partagez votre vision avec nous
-              et découvrez comment Manejousselin peut transformer votre espace.
+              {c.intro[lang]}
             </p>
             <div className="space-y-4 md:space-y-6">
               {[
@@ -58,7 +59,6 @@ export const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Form */}
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
@@ -69,19 +69,19 @@ export const ContactSection = () => {
           >
             <div>
               <label className="font-body text-[10px] md:text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                Votre Nom
+                {c.nameLabel[lang]}
               </label>
               <input
                 value={form.nom}
                 onChange={(e) => setForm({ ...form, nom: e.target.value })}
                 required
                 className="w-full bg-transparent border-b border-border py-2.5 md:py-3 text-foreground font-body text-xs md:text-sm focus:border-primary focus:outline-none transition-colors"
-                placeholder="Entrez votre nom"
+                placeholder={c.namePlaceholder[lang]}
               />
             </div>
             <div>
               <label className="font-body text-[10px] md:text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                Adresse E-mail
+                {c.emailLabel[lang]}
               </label>
               <input
                 type="email"
@@ -94,7 +94,7 @@ export const ContactSection = () => {
             </div>
             <div>
               <label className="font-body text-[10px] md:text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2 block">
-                Votre Message
+                {c.msgLabel[lang]}
               </label>
               <textarea
                 value={form.message}
@@ -102,14 +102,14 @@ export const ContactSection = () => {
                 required
                 rows={4}
                 className="w-full bg-transparent border-b border-border py-2.5 md:py-3 text-foreground font-body text-xs md:text-sm focus:border-primary focus:outline-none transition-colors resize-none"
-                placeholder="Décrivez votre projet..."
+                placeholder={c.msgPlaceholder[lang]}
               />
             </div>
             <button
               type="submit"
               className="group flex items-center gap-3 px-6 md:px-10 py-3 md:py-4 bg-primary text-primary-foreground font-body text-[10px] md:text-xs tracking-[0.2em] uppercase hover:bg-primary/90 transition-all duration-300"
             >
-              Envoyer
+              {c.send[lang]}
               <Send size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.form>
