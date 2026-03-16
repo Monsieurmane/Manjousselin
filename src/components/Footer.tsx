@@ -1,4 +1,11 @@
 import { Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const footerLegal = {
+  terms: { fr: "CGU", en: "Terms", de: "AGB" },
+  privacy: { fr: "Confidentialité", en: "Privacy", de: "Datenschutz" },
+};
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -13,6 +20,7 @@ const PinterestIcon = () => (
 );
 
 export const Footer = () => {
+  const { lang } = useLanguage();
   const socials = [
     { name: "Instagram", url: "https://www.instagram.com/manejousselin", icon: <Instagram size={20} strokeWidth={1.5} /> },
     { name: "TikTok", url: "https://www.tiktok.com/@manejousselin", icon: <TikTokIcon /> },
@@ -28,9 +36,20 @@ export const Footer = () => {
         <a href="#accueil" className="font-body text-sm md:text-lg tracking-[0.25em] text-gradient-gold font-medium">
           manejousselin
         </a>
-        <p className="font-body text-[10px] md:text-xs text-muted-foreground tracking-wider">
-          © {new Date().getFullYear()} manejousselin
-        </p>
+        <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+          <p className="font-body text-[10px] md:text-xs text-muted-foreground tracking-wider">
+            © {new Date().getFullYear()} manejousselin
+          </p>
+          <span className="hidden md:inline text-muted-foreground text-[10px]">·</span>
+          <div className="flex items-center gap-3">
+            <Link to="/terms" className="font-body text-[10px] md:text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider">
+              {footerLegal.terms[lang]}
+            </Link>
+            <Link to="/privacy" className="font-body text-[10px] md:text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider">
+              {footerLegal.privacy[lang]}
+            </Link>
+          </div>
+        </div>
         <div className="flex items-center gap-4 md:gap-5">
           {socials.map((s) => (
             <a
