@@ -36,9 +36,20 @@ export const Footer = () => {
         <a href="#accueil" className="font-body text-sm md:text-lg tracking-[0.25em] text-gradient-gold font-medium">
           manejousselin
         </a>
-        <p className="font-body text-[10px] md:text-xs text-muted-foreground tracking-wider">
-          © {new Date().getFullYear()} manejousselin
-        </p>
+        <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+          <p className="font-body text-[10px] md:text-xs text-muted-foreground tracking-wider">
+            © {new Date().getFullYear()} manejousselin
+          </p>
+          <span className="hidden md:inline text-muted-foreground text-[10px]">·</span>
+          <div className="flex items-center gap-3">
+            <Link to="/terms" className="font-body text-[10px] md:text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider">
+              {footerLegal.terms[lang]}
+            </Link>
+            <Link to="/privacy" className="font-body text-[10px] md:text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider">
+              {footerLegal.privacy[lang]}
+            </Link>
+          </div>
+        </div>
         <div className="flex items-center gap-4 md:gap-5">
           {socials.map((s) => (
             <a
