@@ -20,6 +20,7 @@ const PinterestIcon = () => (
 );
 
 export const Footer = () => {
+  const { lang } = useLanguage();
   const socials = [
     { name: "Instagram", url: "https://www.instagram.com/manejousselin", icon: <Instagram size={20} strokeWidth={1.5} /> },
     { name: "TikTok", url: "https://www.tiktok.com/@manejousselin", icon: <TikTokIcon /> },
