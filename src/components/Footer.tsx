@@ -1,4 +1,11 @@
 import { Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const footerLegal = {
+  terms: { fr: "CGU", en: "Terms", de: "AGB" },
+  privacy: { fr: "Confidentialité", en: "Privacy", de: "Datenschutz" },
+};
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
