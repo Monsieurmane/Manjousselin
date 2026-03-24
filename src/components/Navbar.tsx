@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import logoEmblem from "@/assets/logo-emblem.webp";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
