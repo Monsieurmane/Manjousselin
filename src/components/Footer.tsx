@@ -1,6 +1,7 @@
 import { Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logoEmblem from "@/assets/logo-emblem.webp";
 
 const footerLegal = {
   terms: { fr: "CGU", en: "Terms", de: "AGB" },
