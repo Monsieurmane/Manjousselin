@@ -1,6 +1,7 @@
 import { Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logoEmblem from "@/assets/logo-emblem.webp";
 
 const footerLegal = {
   terms: { fr: "CGU", en: "Terms", de: "AGB" },
@@ -33,8 +34,11 @@ export const Footer = () => {
   return (
     <footer className="py-8 md:py-12 px-4 md:px-6 border-t border-border">
       <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-        <a href="#accueil" className="font-body text-sm md:text-lg tracking-[0.25em] text-gradient-gold font-medium">
-          manejousselin
+        <a href="#accueil" className="flex items-center gap-2">
+          <img src={logoEmblem} alt="manejousselin emblem" className="h-8 md:h-10 w-auto opacity-85" />
+          <span className="font-body text-sm md:text-lg tracking-[0.25em] text-gradient-gold font-medium">
+            manejousselin
+          </span>
         </a>
         <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
           <p className="font-body text-[10px] md:text-xs text-muted-foreground tracking-wider">
