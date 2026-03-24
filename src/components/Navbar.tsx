@@ -35,8 +35,11 @@ export const Navbar = () => {
       }`}
     >
       <div className="container max-w-7xl mx-auto flex items-center justify-between py-3 md:py-5 px-4 md:px-6">
-        <a href="#accueil" className="font-body text-[10px] sm:text-xs md:text-sm tracking-[0.15em] md:tracking-[0.25em] text-gradient-gold font-medium shrink-0">
-          manejousselin
+        <a href="#accueil" className="flex items-center gap-2 shrink-0">
+          <img src={logoEmblem} alt="manejousselin emblem" className="h-7 sm:h-8 md:h-9 w-auto opacity-90" />
+          <span className="font-body text-[10px] sm:text-xs md:text-sm tracking-[0.15em] md:tracking-[0.25em] text-gradient-gold font-medium">
+            manejousselin
+          </span>
         </a>
 
         {/* Desktop */}
