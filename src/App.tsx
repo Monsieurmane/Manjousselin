@@ -25,6 +25,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/videos" element={<InstagramVideos />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
