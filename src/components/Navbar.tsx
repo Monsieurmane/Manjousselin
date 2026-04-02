@@ -16,6 +16,7 @@ export const Navbar = () => {
     { label: t.nav.services[lang], href: "#services" },
     { label: t.nav.portfolio[lang], href: "#realisations" },
     { label: t.nav.about[lang], href: "#apropos" },
+    { label: t.nav.videos[lang], href: "/videos" },
     { label: t.nav.contact[lang], href: "#contact" },
   ];
 
