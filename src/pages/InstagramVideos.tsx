@@ -41,11 +41,6 @@ const getEmbedUrl = (post: InstaPost) => {
   return `https://www.instagram.com/p/${post.id}/embed/`;
 };
 
-const getPostUrl = (post: InstaPost) => {
-  if (post.type === "reel") return `https://www.instagram.com/reel/${post.id}/`;
-  return `https://www.instagram.com/p/${post.id}/`;
-};
-
 const InstagramVideos = () => {
   const { lang } = useLanguage();
 
@@ -73,12 +68,9 @@ const InstagramVideos = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Instagram className="text-primary" size={28} />
-              <h1 className="font-heading text-3xl md:text-5xl text-foreground">
-                {pageText.title[lang]}
-              </h1>
-            </div>
+            <h1 className="font-heading text-3xl md:text-5xl text-foreground mb-4">
+              {pageText.title[lang]}
+            </h1>
             <p className="font-body text-sm md:text-base text-muted-foreground tracking-wider max-w-xl mx-auto mb-6">
               {pageText.subtitle[lang]}
             </p>
@@ -94,7 +86,7 @@ const InstagramVideos = () => {
             </a>
           </motion.div>
 
-          {/* Posts Grid */}
+          {/* Posts Grid - embeds play directly on this page */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {posts.map((post, index) => (
               <motion.div
@@ -102,30 +94,17 @@ const InstagramVideos = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-card rounded-lg overflow-hidden border border-border hover:border-primary/30 transition-all duration-300"
+                className="relative bg-card rounded-lg overflow-hidden border border-border"
                 style={{ aspectRatio: post.type === "reel" ? "9/16" : "1/1" }}
               >
                 <iframe
                   src={getEmbedUrl(post)}
                   className="w-full h-full border-0"
                   allowFullScreen
+                  allow="autoplay; encrypted-media"
                   loading="lazy"
                   title={post.caption[lang]}
                 />
-
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
-                  <p className="font-body text-white text-sm tracking-wider mb-2">{post.caption[lang]}</p>
-                  <a
-                    href={getPostUrl(post)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-xs font-body tracking-wider transition-colors"
-                  >
-                    <Instagram size={12} />
-                    Instagram
-                    <ExternalLink size={10} />
-                  </a>
-                </div>
               </motion.div>
             ))}
           </div>
