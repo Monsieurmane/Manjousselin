@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Instagram, ExternalLink, Play, Volume2, ArrowLeft } from "lucide-react";
+import { Instagram, ExternalLink, ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -10,27 +10,41 @@ const instagramHandle = "monsieurmane";
 const instagramUrl = `https://www.instagram.com/${instagramHandle}/`;
 
 const pageText = {
-  title: { fr: "Nos Vidéos", en: "Our Videos", de: "Unsere Videos" },
+  title: { fr: "Galerie", en: "Gallery", de: "Galerie" },
   subtitle: {
-    fr: "Découvrez nos créations en mouvement",
-    en: "Discover our creations in motion",
-    de: "Entdecken Sie unsere Kreationen in Bewegung",
+    fr: "Découvrez nos créations en images et en mouvement",
+    en: "Discover our creations in images and motion",
+    de: "Entdecken Sie unsere Kreationen in Bild und Bewegung",
   },
   followUs: { fr: "Suivez-nous sur Instagram", en: "Follow us on Instagram", de: "Folgen Sie uns auf Instagram" },
-  watchOn: { fr: "Voir sur Instagram", en: "Watch on Instagram", de: "Auf Instagram ansehen" },
   back: { fr: "Retour", en: "Back", de: "Zurück" },
-  clickToWatch: { fr: "Cliquer pour regarder avec le son", en: "Click to watch with sound", de: "Klicken zum Ansehen mit Ton" },
 };
 
-// Instagram Reel embed URLs - replace with actual reel shortcodes from the profile
-const reels = [
-  { id: "DFuHvVlIU95", caption: { fr: "Design d'intérieur", en: "Interior Design", de: "Innenarchitektur" } },
-  { id: "DFZ1_nKoUUL", caption: { fr: "Aménagement d'espace", en: "Space Planning", de: "Raumgestaltung" } },
-  { id: "DFXZ6hqIV55", caption: { fr: "Inspiration céramique", en: "Ceramic Inspiration", de: "Keramik-Inspiration" } },
-  { id: "DE7mMEIIpTk", caption: { fr: "Projet en cours", en: "Work in Progress", de: "Projekt in Arbeit" } },
-  { id: "DE1VjhXob_n", caption: { fr: "Nos réalisations", en: "Our Work", de: "Unsere Arbeit" } },
-  { id: "DEsvGJoITAa", caption: { fr: "Visite virtuelle", en: "Virtual Tour", de: "Virtuelle Tour" } },
+type PostType = "reel" | "post";
+
+interface InstaPost {
+  id: string;
+  type: PostType;
+  caption: { fr: string; en: string; de: string };
+}
+
+const posts: InstaPost[] = [
+  { id: "DWmVzDyDPhY", type: "reel", caption: { fr: "Création récente", en: "Recent Creation", de: "Neueste Kreation" } },
+  { id: "DWUNHjfjJmr", type: "reel", caption: { fr: "Design d'intérieur", en: "Interior Design", de: "Innenarchitektur" } },
+  { id: "DWBMM_4jUDT", type: "post", caption: { fr: "Inspiration", en: "Inspiration", de: "Inspiration" } },
+  { id: "DV5tGBUjbWn", type: "reel", caption: { fr: "Projet en cours", en: "Work in Progress", de: "Projekt in Arbeit" } },
+  { id: "DGOkwH5so51", type: "reel", caption: { fr: "Nos réalisations", en: "Our Work", de: "Unsere Arbeit" } },
 ];
+
+const getEmbedUrl = (post: InstaPost) => {
+  if (post.type === "reel") return `https://www.instagram.com/reel/${post.id}/embed/`;
+  return `https://www.instagram.com/p/${post.id}/embed/`;
+};
+
+const getPostUrl = (post: InstaPost) => {
+  if (post.type === "reel") return `https://www.instagram.com/reel/${post.id}/`;
+  return `https://www.instagram.com/p/${post.id}/`;
+};
 
 const InstagramVideos = () => {
   const { lang } = useLanguage();
@@ -45,7 +59,6 @@ const InstagramVideos = () => {
 
       <main className="pt-24 pb-16 px-4 md:px-6">
         <div className="container max-w-6xl mx-auto">
-          {/* Back link */}
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 font-body text-sm tracking-wider"
@@ -54,7 +67,6 @@ const InstagramVideos = () => {
             {pageText.back[lang]}
           </Link>
 
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,46 +94,35 @@ const InstagramVideos = () => {
             </a>
           </motion.div>
 
-          {/* Sound hint */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="flex items-center justify-center gap-2 text-muted-foreground mb-8"
-          >
-            <Volume2 size={16} />
-            <span className="font-body text-xs tracking-wider">{pageText.clickToWatch[lang]}</span>
-          </motion.div>
-
-          {/* Video Grid - Instagram style */}
+          {/* Posts Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {reels.map((reel, index) => (
+            {posts.map((post, index) => (
               <motion.div
-                key={reel.id}
+                key={post.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative aspect-[9/16] bg-card rounded-lg overflow-hidden border border-border hover:border-primary/30 transition-all duration-300"
+                className="group relative bg-card rounded-lg overflow-hidden border border-border hover:border-primary/30 transition-all duration-300"
+                style={{ aspectRatio: post.type === "reel" ? "9/16" : "1/1" }}
               >
                 <iframe
-                  src={`https://www.instagram.com/reel/${reel.id}/embed/`}
+                  src={getEmbedUrl(post)}
                   className="w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
-                  title={reel.caption[lang]}
+                  title={post.caption[lang]}
                 />
 
-                {/* Overlay on hover with link */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
-                  <p className="font-body text-white text-sm tracking-wider mb-2">{reel.caption[lang]}</p>
+                  <p className="font-body text-white text-sm tracking-wider mb-2">{post.caption[lang]}</p>
                   <a
-                    href={`https://www.instagram.com/reel/${reel.id}/`}
+                    href={getPostUrl(post)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-xs font-body tracking-wider transition-colors"
                   >
-                    <Play size={12} />
-                    {pageText.watchOn[lang]}
+                    <Instagram size={12} />
+                    Instagram
                     <ExternalLink size={10} />
                   </a>
                 </div>
@@ -129,7 +130,6 @@ const InstagramVideos = () => {
             ))}
           </div>
 
-          {/* Bottom CTA */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
