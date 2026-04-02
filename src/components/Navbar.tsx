@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -16,6 +17,7 @@ export const Navbar = () => {
     { label: t.nav.services[lang], href: "#services" },
     { label: t.nav.portfolio[lang], href: "#realisations" },
     { label: t.nav.about[lang], href: "#apropos" },
+    { label: t.nav.videos[lang], href: "/videos" },
     { label: t.nav.contact[lang], href: "#contact" },
   ];
 
@@ -46,12 +48,21 @@ export const Navbar = () => {
         <ul className="hidden md:flex items-center gap-4 lg:gap-8">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="font-body text-[9px] lg:text-[10px] tracking-[0.12em] lg:tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                {l.label}
-              </a>
+              {l.href.startsWith("/") ? (
+                <Link
+                  to={l.href}
+                  className="font-body text-[9px] lg:text-[10px] tracking-[0.12em] lg:tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  href={l.href}
+                  className="font-body text-[9px] lg:text-[10px] tracking-[0.12em] lg:tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {l.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -106,13 +117,23 @@ export const Navbar = () => {
             <ul className="flex flex-col items-center gap-5 py-6">
               {links.map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {l.label}
-                  </a>
+                  {l.href.startsWith("/") ? (
+                    <Link
+                      to={l.href}
+                      onClick={() => setOpen(false)}
+                      className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {l.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={l.href}
+                      onClick={() => setOpen(false)}
+                      className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
