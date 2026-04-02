@@ -48,12 +48,21 @@ export const Navbar = () => {
         <ul className="hidden md:flex items-center gap-4 lg:gap-8">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="font-body text-[9px] lg:text-[10px] tracking-[0.12em] lg:tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                {l.label}
-              </a>
+              {l.href.startsWith("/") ? (
+                <Link
+                  to={l.href}
+                  className="font-body text-[9px] lg:text-[10px] tracking-[0.12em] lg:tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  href={l.href}
+                  className="font-body text-[9px] lg:text-[10px] tracking-[0.12em] lg:tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {l.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
