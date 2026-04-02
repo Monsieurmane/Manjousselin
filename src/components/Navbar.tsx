@@ -117,13 +117,23 @@ export const Navbar = () => {
             <ul className="flex flex-col items-center gap-5 py-6">
               {links.map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {l.label}
-                  </a>
+                  {l.href.startsWith("/") ? (
+                    <Link
+                      to={l.href}
+                      onClick={() => setOpen(false)}
+                      className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {l.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={l.href}
+                      onClick={() => setOpen(false)}
+                      className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
