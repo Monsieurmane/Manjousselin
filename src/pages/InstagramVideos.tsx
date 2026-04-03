@@ -37,8 +37,8 @@ const posts: InstaPost[] = [
 ];
 
 const getEmbedUrl = (post: InstaPost) => {
-  if (post.type === "reel") return `https://www.instagram.com/reel/${post.id}/embed/`;
-  return `https://www.instagram.com/p/${post.id}/embed/`;
+  if (post.type === "reel") return `https://www.instagram.com/reel/${post.id}/embed/captioned/`;
+  return `https://www.instagram.com/p/${post.id}/embed/captioned/`;
 };
 
 const InstagramVideos = () => {
@@ -62,7 +62,7 @@ const InstagramVideos = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <main className="pt-24 pb-16 px-0 md:px-0">
+      <main className="pt-24 pb-16">
         <div className="container max-w-4xl mx-auto px-4 md:px-6">
           {/* Back link */}
           <Link
@@ -88,31 +88,31 @@ const InstagramVideos = () => {
           </motion.div>
         </div>
 
-        {/* Grid - clean Instagram-style, edge-to-edge on mobile */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-3 gap-[2px]">
+        {/* Grid - each post shown fully, no cropping */}
+        <div className="max-w-5xl mx-auto px-2 md:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {posts.map((post, index) => (
-              <motion.button
+              <motion.div
                 key={post.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                onClick={() => setSelectedPost(post)}
-                className="relative aspect-square bg-muted overflow-hidden cursor-pointer group"
+                className="relative bg-muted rounded-lg overflow-hidden"
+                style={{
+                  /* Reels are tall (9:16), posts are square (1:1) */
+                  aspectRatio: post.type === "reel" ? "9/16" : "1/1",
+                }}
               >
-                {/* Thumbnail via iframe - no interaction until clicked */}
                 <iframe
                   src={getEmbedUrl(post)}
-                  className="w-full h-full border-0 pointer-events-none"
-                  style={{ transform: "scale(1.5)", transformOrigin: "center center" }}
+                  className="w-full h-full border-0"
                   loading="lazy"
                   title={`Post ${post.id}`}
-                  tabIndex={-1}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  scrolling="no"
                 />
-
-                {/* Subtle hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-opacity duration-200" />
-              </motion.button>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -137,7 +137,7 @@ const InstagramVideos = () => {
         </motion.div>
       </main>
 
-      {/* Modal - Full post view */}
+      {/* Modal */}
       {selectedPost && (
         <div
           className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
