@@ -109,10 +109,10 @@ const InstagramVideos = () => {
                   src={getEmbedUrl(post)}
                   className="absolute border-0 pointer-events-none"
                   style={{
-                    top: "-60px",
+                    top: "-64px",
                     left: "0",
                     width: "100%",
-                    height: "calc(100% + 120px)",
+                    height: "calc(100% + 210px)",
                   }}
                   loading="lazy"
                   title={`Post ${post.id}`}
