@@ -34,11 +34,12 @@ const posts: InstaPost[] = [
   { id: "DWBMM_4jUDT", type: "post" },
   { id: "DV5tGBUjbWn", type: "reel" },
   { id: "DGOkwH5so51", type: "reel" },
+  { id: "DWqozuktKmc", type: "reel" },
 ];
 
 const getEmbedUrl = (post: InstaPost) => {
-  if (post.type === "reel") return `https://www.instagram.com/reel/${post.id}/embed/captioned/`;
-  return `https://www.instagram.com/p/${post.id}/embed/captioned/`;
+  if (post.type === "reel") return `https://www.instagram.com/reel/${post.id}/embed/`;
+  return `https://www.instagram.com/p/${post.id}/embed/`;
 };
 
 const InstagramVideos = () => {
