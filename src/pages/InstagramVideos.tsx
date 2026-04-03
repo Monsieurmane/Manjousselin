@@ -89,7 +89,7 @@ const InstagramVideos = () => {
           </motion.div>
         </div>
 
-        {/* Grid - cropped to hide Instagram chrome */}
+        {/* Grid - uniform squares with clipped Instagram chrome */}
         <div className="max-w-5xl mx-auto px-2 md:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {posts.map((post, index) => (
@@ -98,21 +98,18 @@ const InstagramVideos = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="relative rounded-lg overflow-hidden cursor-pointer"
-                style={{
-                  aspectRatio: post.type === "reel" ? "9/16" : "1/1",
-                }}
+                className="relative rounded-lg cursor-pointer overflow-hidden"
+                style={{ aspectRatio: "1/1" }}
                 onClick={() => setSelectedPost(post)}
               >
-                {/* Iframe is stretched beyond container to crop top/bottom Instagram bars */}
                 <iframe
                   src={getEmbedUrl(post)}
                   className="absolute border-0 pointer-events-none"
                   style={{
-                    top: "-68px",
-                    left: "0",
-                    width: "100%",
-                    height: "calc(100% + 350px)",
+                    top: "-64px",
+                    left: "-1px",
+                    width: "calc(100% + 2px)",
+                    height: "calc(100% + 200px)",
                   }}
                   loading="lazy"
                   title={`Post ${post.id}`}
