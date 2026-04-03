@@ -9,7 +9,7 @@ const translations = {
     portfolio: { fr: "Compétences", en: "Skills", de: "Kompetenzen" },
     about: { fr: "À propos", en: "About", de: "Über uns" },
     contact: { fr: "Contact", en: "Contact", de: "Kontakt" },
-    videos: { fr: "Vidéos", en: "Videos", de: "Videos" },
+    videos: { fr: "Galerie", en: "Gallery", de: "Galerie" },
   },
   hero: {
     subtitle: { fr: "Design d'Intérieur — Dakar, Sénégal", en: "Interior Design — Dakar, Senegal", de: "Innenarchitektur — Dakar, Senegal" },
