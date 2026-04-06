@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import InstagramVideos from "./pages/InstagramVideos";
+import AboutPage from "./pages/AboutPage";
 
 const queryClient = new QueryClient();
 
