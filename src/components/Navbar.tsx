@@ -150,7 +150,7 @@ export const Navbar = () => {
                   ) : (
                     <a
                       href={l.href}
-                      onClick={() => setOpen(false)}
+                      onClick={(e) => { handleAnchorClick(e, l.href); setOpen(false); }}
                       className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
                     >
                       {l.label}
