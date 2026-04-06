@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -11,6 +11,8 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const links = [
     { label: t.nav.home[lang], href: "#accueil" },
@@ -20,6 +22,25 @@ export const Navbar = () => {
     { label: t.nav.videos[lang], href: "/videos" },
     { label: t.nav.contact[lang], href: "#contact" },
   ];
+
+  const handleAnchorClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/" + hash);
+    } else {
+      const el = document.querySelector(hash.replace("#", "#"));
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -37,7 +58,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="container max-w-7xl mx-auto flex items-center justify-between py-3 md:py-5 px-4 md:px-6">
-        <a href="#accueil" className="flex items-center gap-2 shrink-0">
+        <a href="/" onClick={handleLogoClick} className="flex items-center gap-2 shrink-0">
           <img src={logoEmblem} alt="manejousselin emblem" className="h-7 sm:h-8 md:h-9 w-auto opacity-90" />
           <span className="font-body text-[10px] sm:text-xs md:text-sm tracking-[0.15em] md:tracking-[0.25em] text-gradient-gold font-medium">
             manejousselin
@@ -58,6 +79,7 @@ export const Navbar = () => {
               ) : (
                 <a
                   href={l.href}
+                  onClick={(e) => handleAnchorClick(e, l.href)}
                   className="font-body text-[9px] lg:text-[10px] tracking-[0.12em] lg:tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {l.label}
