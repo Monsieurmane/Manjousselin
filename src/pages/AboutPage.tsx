@@ -40,7 +40,7 @@ const AboutPage = () => {
     de: "Über mich",
   };
 
-  const founderName = "Mane Jousselin";
+  const founderName = "Moussa Mane";
   const founderRole = {
     fr: "Fondateur & Designer d'Intérieur",
     en: "Founder & Interior Designer",
