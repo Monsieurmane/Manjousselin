@@ -1,20 +1,40 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState, useEffect } from "react";
+import hero1 from "@/assets/hero-1.png";
+import hero2 from "@/assets/hero-2.jpg";
+
+const heroImages = [hero1, hero2];
 
 export const HeroSection = () => {
   const { lang, t } = useLanguage();
   const h = t.hero;
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
-      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentImage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${heroImages[currentImage]}')` }}
+        />
+      </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background z-10" />
 
       <div className="relative z-20 text-center px-4 md:px-6 max-w-5xl mx-auto">
