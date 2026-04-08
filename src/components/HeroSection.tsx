@@ -4,8 +4,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
 import hero1 from "@/assets/hero-1.png";
 import hero2 from "@/assets/hero-2.jpg";
+import hero3 from "@/assets/hero-3.jpg";
+import hero4 from "@/assets/hero-4.jpg";
 
-const heroImages = [hero1, hero2];
+const heroImages = [hero1, hero2, hero3, hero4];
 
 export const HeroSection = () => {
   const { lang, t } = useLanguage();
