@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import { FloatingSocials } from "@/components/FloatingSocials";
 import { useLanguage } from "@/contexts/LanguageContext";
 import founderImg from "@/assets/founder-portrait.jpg";
+import logoDesignFactory from "@/assets/logo-design-factory.jpeg";
+import logoHfbk from "@/assets/logo-hfbk.png";
 
 const statIcons = [Award, Users, Clock, MapPin];
 const statValues = ["20+", "20+", "6", "1"];
@@ -161,6 +163,36 @@ const AboutPage = () => {
                 </div>
               );
             })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="pb-16 md:pb-28 px-4 md:px-6">
+        <div className="container max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary mb-10">
+              {lang === "fr" ? "Formation" : lang === "de" ? "Ausbildung" : "Education"}
+            </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+              <div className="flex flex-col items-center gap-4 max-w-[220px]">
+                <img src={logoDesignFactory} alt="Design Factory International Hamburg" className="h-16 md:h-20 object-contain" />
+                <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed">
+                  {lang === "fr" ? "Design graphique" : lang === "de" ? "Grafikdesign" : "Graphic Design"}
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-4 max-w-[220px]">
+                <img src={logoHfbk} alt="HFBK Hamburg" className="h-16 md:h-20 object-contain" />
+                <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed">
+                  {lang === "fr" ? "Bachelor en Design (en cours)" : lang === "de" ? "Bachelor in Design (aktuell)" : "Bachelor in Design (current)"}
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
