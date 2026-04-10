@@ -5,8 +5,6 @@ import { Footer } from "@/components/Footer";
 import { FloatingSocials } from "@/components/FloatingSocials";
 import { useLanguage } from "@/contexts/LanguageContext";
 import founderImg from "@/assets/founder-portrait.jpg";
-import logoDesignFactory from "@/assets/logo-design-factory.png";
-import logoHfbk from "@/assets/logo-hfbk-gold.png";
 
 const statIcons = [Award, Users, Clock, MapPin];
 const statValues = ["20+", "20+", "6", "1"];
@@ -112,24 +110,28 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Education - directly below founder info */}
-              <div className="mt-8">
-                <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary mb-6 text-center lg:text-left">
+              {/* Education */}
+              <div className="mt-8 text-center lg:text-left">
+                <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary mb-4">
                   {lang === "fr" ? "Formation" : lang === "de" ? "Ausbildung" : "Education"}
                 </p>
-                <div className="flex flex-col sm:flex-row items-center lg:items-start gap-8">
-                  <div className="flex flex-col items-center gap-3 max-w-[180px]">
-                    <img src={logoDesignFactory} alt="Design Factory International Hamburg" className="h-14 md:h-16 object-contain" />
-                    <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed text-center">
-                      {lang === "fr" ? "Design graphique" : lang === "de" ? "Grafikdesign" : "Graphic Design"}
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-3 max-w-[180px]">
-                    <img src={logoHfbk} alt="HFBK Hamburg" className="h-14 md:h-16 object-contain" />
-                    <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed text-center">
-                      {lang === "fr" ? "Bachelor en Design (en cours)" : lang === "de" ? "Bachelor in Design (aktuell)" : "Bachelor in Design (current)"}
-                    </p>
-                  </div>
+                <div className="space-y-3">
+                  <a
+                    href="https://page.redbox.de/design-factory-international-stellt-betrieb-ein"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block font-body text-[10px] md:text-xs text-muted-foreground hover:text-primary transition-colors duration-300 leading-relaxed"
+                  >
+                    Design Factory International Hamburg — {lang === "fr" ? "Diplôme en Graphisme" : lang === "de" ? "Diplom in Grafikdesign" : "Diploma in Graphic Design"}
+                  </a>
+                  <a
+                    href="https://www.hfbk-hamburg.de/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block font-body text-[10px] md:text-xs text-muted-foreground hover:text-primary transition-colors duration-300 leading-relaxed"
+                  >
+                    Hochschule für Bildende Künste Hamburg — Bachelor Product Design
+                  </a>
                 </div>
               </div>
             </motion.div>
