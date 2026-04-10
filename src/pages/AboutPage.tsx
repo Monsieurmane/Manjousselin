@@ -111,6 +111,27 @@ const AboutPage = () => {
                   {founderRole[lang]}
                 </p>
               </div>
+
+              {/* Education - directly below founder info */}
+              <div className="mt-8">
+                <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary mb-6 text-center lg:text-left">
+                  {lang === "fr" ? "Formation" : lang === "de" ? "Ausbildung" : "Education"}
+                </p>
+                <div className="flex flex-col sm:flex-row items-center lg:items-start gap-8">
+                  <div className="flex flex-col items-center gap-3 max-w-[180px]">
+                    <img src={logoDesignFactory} alt="Design Factory International Hamburg" className="h-14 md:h-16 object-contain" />
+                    <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed text-center">
+                      {lang === "fr" ? "Design graphique" : lang === "de" ? "Grafikdesign" : "Graphic Design"}
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 max-w-[180px]">
+                    <img src={logoHfbk} alt="HFBK Hamburg" className="h-14 md:h-16 object-contain" />
+                    <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed text-center">
+                      {lang === "fr" ? "Bachelor en Design (en cours)" : lang === "de" ? "Bachelor in Design (aktuell)" : "Bachelor in Design (current)"}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             {/* Bio text */}
@@ -167,35 +188,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Education */}
-      <section className="pb-16 md:pb-28 px-4 md:px-6">
-        <div className="container max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="font-body text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary mb-10">
-              {lang === "fr" ? "Formation" : lang === "de" ? "Ausbildung" : "Education"}
-            </p>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
-              <div className="flex flex-col items-center gap-4 max-w-[220px]">
-                <img src={logoDesignFactory} alt="Design Factory International Hamburg" className="h-16 md:h-20 object-contain" />
-                <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed">
-                  {lang === "fr" ? "Design graphique" : lang === "de" ? "Grafikdesign" : "Graphic Design"}
-                </p>
-              </div>
-              <div className="flex flex-col items-center gap-4 max-w-[220px]">
-                <img src={logoHfbk} alt="HFBK Hamburg" className="h-16 md:h-20 object-contain" />
-                <p className="font-body text-[10px] md:text-xs text-muted-foreground leading-relaxed">
-                  {lang === "fr" ? "Bachelor en Design (en cours)" : lang === "de" ? "Bachelor in Design (aktuell)" : "Bachelor in Design (current)"}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       <Footer />
     </div>
