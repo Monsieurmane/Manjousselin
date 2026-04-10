@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { FloatingSocials } from "@/components/FloatingSocials";
 import { useLanguage } from "@/contexts/LanguageContext";
 import founderImg from "@/assets/founder-portrait.jpg";
-import logoDesignFactory from "@/assets/logo-design-factory.jpeg";
-import logoHfbk from "@/assets/logo-hfbk.png";
+import logoDesignFactory from "@/assets/logo-design-factory.png";
+import logoHfbk from "@/assets/logo-hfbk-gold.png";
 
 const statIcons = [Award, Users, Clock, MapPin];
 const statValues = ["20+", "20+", "6", "1"];
