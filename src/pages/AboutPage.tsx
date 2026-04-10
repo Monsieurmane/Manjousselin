@@ -154,7 +154,7 @@ const AboutPage = () => {
               ))}
 
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-block mt-4 px-6 md:px-8 py-3 md:py-3.5 border border-primary text-primary font-body text-[10px] md:text-xs tracking-[0.2em] uppercase hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 {a.cta[lang]}
