@@ -29,7 +29,7 @@ export const articles: Article[] = [
     },
     date: "2025-01-15",
     readTime: { fr: "8 min de lecture", en: "8 min read", de: "8 Min. Lesezeit" },
-    cover: coverCeramique,
+    cover: imgTerrasse,
     images: [
       {
         src: coverCeramique,
