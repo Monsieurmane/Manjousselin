@@ -1,4 +1,4 @@
-import coverCeramique from "@/assets/article-ceramique-cover.jpg";
+import imgSchema from "@/assets/article-ceramique-schema.png";
 import imgTerrasse from "@/assets/article-ceramique-terrasse.jpg";
 import imgTexture from "@/assets/article-ceramique-texture.jpg";
 
@@ -32,11 +32,11 @@ export const articles: Article[] = [
     cover: imgTerrasse,
     images: [
       {
-        src: coverCeramique,
+        src: imgSchema,
         alt: {
-          fr: "Composition céramique : couches de minéraux",
-          en: "Ceramic composition: mineral layers",
-          de: "Keramikzusammensetzung: Mineralschichten",
+          fr: "Composition technique : couches de feldspath, quartz et kaolin",
+          en: "Technical composition: feldspar, quartz and kaolin layers",
+          de: "Technische Zusammensetzung: Feldspat-, Quarz- und Kaolinschichten",
         },
       },
       {
