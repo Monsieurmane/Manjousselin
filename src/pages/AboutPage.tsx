@@ -15,7 +15,7 @@ const AboutPage = () => {
 
   const bioText = {
     fr: [
-      "Je suis le fondateur de Manejousselin, un cabinet de conseil en design d'intérieur fondé à Hambourg, en Allemagne. Passionné par l'art de transformer les espaces, j'ai consacré plus de six années à perfectionner mon expertise dans la conception d'intérieurs qui allient élégance contemporaine et richesse culturelle.",
+      "Je suis le fondateur de Manejousselin, MAISON DE DESIGN fondé à Hambourg, en Allemagne. Passionné par l'art de transformer les espaces, j'ai consacré plus de six années à perfectionner mon expertise dans la conception d'intérieurs qui allient élégance contemporaine et richesse culturelle.",
       "Mon parcours m'a conduit de Hambourg à Dakar, où j'ai établi notre bureau au Sénégal. Cette double perspective européenne et africaine nourrit une approche unique du design, puisant dans les traditions sénégalaises tout en embrassant les tendances internationales.",
       "Spécialisé en céramique et aménagement d'espaces, je mets un point d'honneur à allier savoir-faire artisanal et design contemporain. Chaque détail, du choix des carreaux à l'agencement des volumes, est pensé pour sublimer votre cadre de vie et créer des intérieurs qui reflètent véritablement votre identité.",
       "Avec plus de 20 projets réalisés et autant de clients satisfaits, ma mission reste la même : transformer chaque espace en une expérience sensorielle unique, où fonctionnalité et esthétique se rencontrent harmonieusement.",

@@ -22,7 +22,7 @@ const content = {
         de: "1. Gegenstand",
       },
       body: {
-        fr: "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du site internet manejousselin.com, ainsi que les services proposés par Manejousselin, cabinet de conseil en design d'intérieur basé à Hambourg, Allemagne. En accédant à ce site, vous acceptez sans réserve les présentes conditions.",
+        fr: "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du site internet manejousselin.com, ainsi que les services proposés par Manejousselin, MAISON DE DESIGN basé à Hambourg, Allemagne. En accédant à ce site, vous acceptez sans réserve les présentes conditions.",
         en: "These Terms of Service govern access to and use of the website manejousselin.com, as well as the services offered by Manejousselin, an interior design consultancy based in Hamburg, Germany. By accessing this site, you accept these terms without reservation.",
         de: "Diese Allgemeinen Geschäftsbedingungen regeln den Zugang zu und die Nutzung der Website manejousselin.com sowie die von Manejousselin, einer in Hamburg ansässigen Innenarchitekturberatung, angebotenen Dienstleistungen. Mit dem Zugriff auf diese Website akzeptieren Sie diese Bedingungen vorbehaltlos.",
       },
