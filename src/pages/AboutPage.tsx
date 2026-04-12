@@ -154,7 +154,9 @@ const AboutPage = () => {
               ))}
 
               <a
-                href="/#contact"
+                href="https://wa.me/4915568580042?text=Bonjour%20Mane%20Josselin%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block mt-4 px-6 md:px-8 py-3 md:py-3.5 border border-primary text-primary font-body text-[10px] md:text-xs tracking-[0.2em] uppercase hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 {a.cta[lang]}
