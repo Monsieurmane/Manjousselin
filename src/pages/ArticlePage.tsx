@@ -118,12 +118,14 @@ const ArticlePage = () => {
 
             {/* CTA */}
             <div className="mt-12 text-center">
-              <Link
-                to="/#contact"
+              <a
+                href="https://wa.me/4915568580042?text=Bonjour%20Mane%20Josselin%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20solutions%20c%C3%A9ramiques."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-body text-sm tracking-wider hover:bg-primary/90 transition-colors"
               >
                 {{ fr: "Contactez nos experts", en: "Contact our experts", de: "Kontaktieren Sie unsere Experten" }[lang]}
-              </Link>
+              </a>
             </div>
 
             {/* Sources */}
