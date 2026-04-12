@@ -22,7 +22,7 @@ const content = {
         de: "1. Gegenstand",
       },
       body: {
-        fr: "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du site internet manejousselin.com, ainsi que les services proposés par Manejousselin, cabinet de conseil en design d'intérieur basé à Hambourg, Allemagne. En accédant à ce site, vous acceptez sans réserve les présentes conditions.",
+        fr: "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du site internet manejousselin.com, ainsi que les services proposés par Manejousselin, MAISON DE DESIGN basé à Hambourg, Allemagne. En accédant à ce site, vous acceptez sans réserve les présentes conditions.",
         en: "These Terms of Service govern access to and use of the website manejousselin.com, as well as the services offered by Manejousselin, an interior design consultancy based in Hamburg, Germany. By accessing this site, you accept these terms without reservation.",
         de: "Diese Allgemeinen Geschäftsbedingungen regeln den Zugang zu und die Nutzung der Website manejousselin.com sowie die von Manejousselin, einer in Hamburg ansässigen Innenarchitekturberatung, angebotenen Dienstleistungen. Mit dem Zugriff auf diese Website akzeptieren Sie diese Bedingungen vorbehaltlos.",
       },
@@ -34,7 +34,7 @@ const content = {
         de: "2. Angebotene Dienstleistungen",
       },
       body: {
-        fr: "Manejousselin propose des services de design d'intérieur incluant, sans s'y limiter : la visualisation 3D, la sélection de matériaux, l'aménagement d'espaces, la conception de plans, le design luminaire et le suivi de projet. Les prestations sont définies par un contrat spécifique entre le client et Manejousselin.",
+        fr: "Manejousselin propose des services de MAISON DE DESIGN incluant, sans s'y limiter : la visualisation 3D, la sélection de matériaux, l'aménagement d'espaces, la conception de plans, le design luminaire et le suivi de projet. Les prestations sont définies par un contrat spécifique entre le client et Manejousselin.",
         en: "Manejousselin offers interior design services including, but not limited to: 3D visualization, material selection, space planning, technical drawings, lighting design, and project management. Services are defined by a specific contract between the client and Manejousselin.",
         de: "Manejousselin bietet Innenarchitektur-Dienstleistungen an, darunter: 3D-Visualisierung, Materialauswahl, Raumplanung, technische Zeichnungen, Lichtdesign und Projektmanagement. Die Leistungen werden durch einen individuellen Vertrag zwischen dem Kunden und Manejousselin definiert.",
       },

@@ -12,7 +12,7 @@ const translations = {
     videos: { fr: "Recherches", en: "Research", de: "Forschung" },
   },
   hero: {
-    subtitle: { fr: "Design d'Intérieur — Dakar, Sénégal", en: "Interior Design — Dakar, Senegal", de: "Innenarchitektur — Dakar, Senegal" },
+    subtitle: { fr: "MAISON DE DESIGN — Dakar, Sénégal", en: "Interior Design — Dakar, Senegal", de: "Innenarchitektur — Dakar, Senegal" },
     line1: { fr: "L'Art de", en: "The Art of", de: "Die Kunst," },
     line2: { fr: "Sublimer", en: "Elevating", de: "Räume zu" },
     line3: { fr: "vos Espaces", en: "your Spaces", de: "veredeln" },

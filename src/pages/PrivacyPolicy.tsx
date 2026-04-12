@@ -22,7 +22,7 @@ const content = {
         de: "1. Verantwortlicher",
       },
       body: {
-        fr: "Le responsable du traitement des données personnelles collectées via le site manejousselin.com est Manejousselin, cabinet de conseil en design d'intérieur, basé à Hambourg, Allemagne. Pour toute question relative à vos données personnelles, vous pouvez nous contacter via notre formulaire de contact.",
+        fr: "Le responsable du traitement des données personnelles collectées via le site manejousselin.com est Manejousselin, MAISON DE DESIGN, basé à Hambourg, Allemagne. Pour toute question relative à vos données personnelles, vous pouvez nous contacter via notre formulaire de contact.",
         en: "The data controller for personal data collected through manejousselin.com is Manejousselin, an interior design consultancy based in Hamburg, Germany. For any questions regarding your personal data, you may contact us via our contact form.",
         de: "Der Verantwortliche für die über manejousselin.com erhobenen personenbezogenen Daten ist Manejousselin, eine Innenarchitekturberatung mit Sitz in Hamburg, Deutschland. Bei Fragen zu Ihren personenbezogenen Daten können Sie uns über unser Kontaktformular erreichen.",
       },
