@@ -17,7 +17,7 @@ export const Navbar = () => {
   const links = [
     { label: t.nav.home[lang], href: "#accueil" },
     { label: t.nav.services[lang], href: "#services" },
-    { label: t.nav.portfolio[lang], href: "#realisations" },
+    { label: t.nav.portfolio[lang], href: "/inspirations" },
     { label: t.nav.about[lang], href: "/about" },
     { label: t.nav.videos[lang], href: "/editorial" },
     { label: t.nav.contact[lang], href: "#contact" },
