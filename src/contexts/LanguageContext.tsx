@@ -6,7 +6,7 @@ const translations = {
   nav: {
     home: { fr: "Accueil", en: "Home", de: "Startseite" },
     services: { fr: "Services", en: "Services", de: "Leistungen" },
-    portfolio: { fr: "Compétences", en: "Skills", de: "Kompetenzen" },
+    portfolio: { fr: "Inspirations", en: "Inspirations", de: "Inspirationen" },
     about: { fr: "À propos", en: "About", de: "Über uns" },
     contact: { fr: "Contact", en: "Contact", de: "Kontakt" },
     videos: { fr: "Recherches", en: "Research", de: "Forschung" },
