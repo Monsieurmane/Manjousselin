@@ -1,3 +1,53 @@
+import calacattaGold from "@/assets/materials/calacatta-gold.jpg";
+import eleganceCalacatta from "@/assets/materials/elegance-calacatta.jpg";
+import xlabCalacatta from "@/assets/materials/xlab-calacatta.jpg";
+import vendomeCalacatta from "@/assets/materials/vendome-calacatta.jpg";
+import vendomeVagues from "@/assets/materials/vendome-vagues.jpg";
+import juliaCalacatta from "@/assets/materials/julia-calacatta.jpg";
+import luxorGold from "@/assets/materials/luxor-gold.jpg";
+import pietraIseo from "@/assets/materials/pietra-iseo.jpg";
+import treeNatural from "@/assets/materials/tree-natural.jpg";
+import oltreSand from "@/assets/materials/oltre-sand.jpg";
+import oltreNatural from "@/assets/materials/oltre-natural.jpg";
+import wildSunset from "@/assets/materials/wild-sunset.jpg";
+import seasonSpring from "@/assets/materials/season-spring.jpg";
+import seasonFall from "@/assets/materials/season-fall.jpg";
+import harbourWhite from "@/assets/materials/harbour-white.jpg";
+import harbourGold from "@/assets/materials/harbour-gold.jpg";
+import harbourBrown from "@/assets/materials/harbour-brown.jpg";
+import cementCream from "@/assets/materials/cement-cream.jpg";
+import canadianHoneyOak from "@/assets/materials/canadian-honey-oak.jpg";
+import ashSerie from "@/assets/materials/ash-serie.jpg";
+import flexAsh from "@/assets/materials/flex-ash.jpg";
+import oakClassic from "@/assets/materials/oak-classic.jpg";
+import doussieImg from "@/assets/materials/doussie.jpg";
+
+const images: Record<string, string> = {
+  "calacatta-gold": calacattaGold,
+  "elegance-calacatta": eleganceCalacatta,
+  "xlab-calacatta": xlabCalacatta,
+  "vendome-calacatta": vendomeCalacatta,
+  "vendome-vagues": vendomeVagues,
+  "julia-calacatta": juliaCalacatta,
+  "luxor-gold": luxorGold,
+  "pietra-iseo": pietraIseo,
+  "tree-natural": treeNatural,
+  "oltre-sand": oltreSand,
+  "oltre-natural": oltreNatural,
+  "wild-sunset": wildSunset,
+  "season-spring": seasonSpring,
+  "season-fall": seasonFall,
+  "harbour-white": harbourWhite,
+  "harbour-gold": harbourGold,
+  "harbour-brown": harbourBrown,
+  "cement-cream": cementCream,
+  "canadian-honey-oak": canadianHoneyOak,
+  "ash-serie": ashSerie,
+  "flex-ash": flexAsh,
+  "oak-classic": oakClassic,
+  doussie: doussieImg,
+};
+
 export type MaterialCategory = "ceramic" | "spc" | "wood";
 
 export interface Material {
@@ -7,12 +57,14 @@ export interface Material {
   subCategory?: string;
   format: string;
   description: { fr: string; en: string; de: string };
-  // CSS background used to visually represent the material on the swatch
+  // Realistic photo of the material
+  image: string;
+  // CSS background fallback
   swatch: string;
   source?: string;
 }
 
-export const materials: Material[] = [
+const rawMaterials: Omit<Material, "image">[] = [
   // CERAMIC – Marble effect
   {
     id: "calacatta-gold",
@@ -326,6 +378,11 @@ export const materials: Material[] = [
       "repeating-linear-gradient(92deg, hsl(18 45% 32%) 0px, hsl(20 50% 38%) 5px, hsl(15 40% 25%) 11px, hsl(18 45% 32%) 16px)",
   },
 ];
+
+export const materials: Material[] = rawMaterials.map((m) => ({
+  ...m,
+  image: images[m.id],
+}));
 
 export const categoryLabels: Record<MaterialCategory, { fr: string; en: string; de: string }> = {
   ceramic: { fr: "Carrelage Céramique", en: "Ceramic Tiles", de: "Keramikfliesen" },
