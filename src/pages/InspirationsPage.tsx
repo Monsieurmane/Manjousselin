@@ -272,7 +272,13 @@ const InspirationsPage = () => {
                         exit={{ opacity: 0, scale: 0.9 }}
                         className="relative group aspect-square"
                       >
-                        <div className="w-full h-full" style={{ background: m.swatch }} title={m.name} />
+                        <img
+                          src={m.image}
+                          alt={m.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                          title={m.name}
+                        />
                         <button
                           onClick={() => toggle(m.id)}
                           className="absolute -top-1.5 -right-1.5 bg-background border border-border text-foreground hover:text-primary hover:border-primary p-0.5 transition-colors"
