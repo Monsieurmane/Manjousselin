@@ -379,6 +379,11 @@ const rawMaterials: Omit<Material, "image">[] = [
   },
 ];
 
+export const materials: Material[] = rawMaterials.map((m) => ({
+  ...m,
+  image: images[m.id],
+}));
+
 export const categoryLabels: Record<MaterialCategory, { fr: string; en: string; de: string }> = {
   ceramic: { fr: "Carrelage Céramique", en: "Ceramic Tiles", de: "Keramikfliesen" },
   spc: { fr: "Plancher SPC", en: "SPC Flooring", de: "SPC-Boden" },
