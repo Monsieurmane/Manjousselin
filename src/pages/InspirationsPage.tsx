@@ -205,11 +205,16 @@ const InspirationsPage = () => {
                       : "border-border hover:border-primary/50"
                   }`}
                 >
-                  <div
-                    className="aspect-[4/3] w-full"
-                    style={{ background: m.swatch }}
-                    aria-hidden="true"
-                  />
+                  <div className="aspect-[4/3] w-full overflow-hidden bg-muted">
+                    <img
+                      src={m.image}
+                      alt={m.name}
+                      loading="lazy"
+                      width={768}
+                      height={576}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                   {isSelected && (
                     <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-[10px] font-body tracking-[0.18em] uppercase px-2 py-1">
                       ✓ {copy.board.selected[lang]}
