@@ -64,9 +64,7 @@ export interface Material {
   source?: string;
 }
 
-const baseMaterials: Omit<Material, "image">[] = ([] as Omit<Material, "image">[]);
-
-export const materials: Material[] = [
+const rawMaterials: Omit<Material, "image">[] = [
   // CERAMIC – Marble effect
   {
     id: "calacatta-gold",
