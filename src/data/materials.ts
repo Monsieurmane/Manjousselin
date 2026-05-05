@@ -2,10 +2,7 @@ import calacattaGold from "@/assets/materials/calacatta-gold.jpg";
 import eleganceCalacatta from "@/assets/materials/elegance-calacatta.jpg";
 import xlabCalacatta from "@/assets/materials/xlab-calacatta.jpg";
 import vendomeCalacatta from "@/assets/materials/vendome-calacatta.jpg";
-import vendomeVagues from "@/assets/materials/vendome-vagues.jpg";
 import juliaCalacatta from "@/assets/materials/julia-calacatta.jpg";
-import luxorGold from "@/assets/materials/luxor-gold.jpg";
-import pietraIseo from "@/assets/materials/pietra-iseo.jpg";
 import treeNatural from "@/assets/materials/tree-natural.jpg";
 import oltreSand from "@/assets/materials/oltre-sand.jpg";
 import oltreNatural from "@/assets/materials/oltre-natural.jpg";
@@ -27,10 +24,7 @@ const images: Record<string, string> = {
   "elegance-calacatta": eleganceCalacatta,
   "xlab-calacatta": xlabCalacatta,
   "vendome-calacatta": vendomeCalacatta,
-  "vendome-vagues": vendomeVagues,
   "julia-calacatta": juliaCalacatta,
-  "luxor-gold": luxorGold,
-  "pietra-iseo": pietraIseo,
   "tree-natural": treeNatural,
   "oltre-sand": oltreSand,
   "oltre-natural": oltreNatural,
@@ -123,20 +117,6 @@ const rawMaterials: Omit<Material, "image">[] = [
       "linear-gradient(110deg, hsl(40 25% 95%) 0%, hsl(35 20% 88%) 50%, hsl(38 25% 75%) 80%, hsl(40 25% 93%) 100%)",
   },
   {
-    id: "vendome-vagues",
-    name: "Vendome Calacatta Vagues",
-    category: "ceramic",
-    subCategory: "Effet Marbre",
-    format: "40×120 cm — Surface 3D ondulée",
-    description: {
-      fr: "Surface 3D ondulée, effet vague. Très décoratif en revêtement mural.",
-      en: "Wavy 3D surface, ripple effect. Highly decorative as wall cladding.",
-      de: "Gewellte 3D-Oberfläche, Wellen-Effekt. Sehr dekorativ als Wandverkleidung.",
-    },
-    swatch:
-      "repeating-linear-gradient(135deg, hsl(40 28% 95%) 0px, hsl(35 22% 86%) 12px, hsl(38 30% 78%) 22px, hsl(40 28% 94%) 34px)",
-  },
-  {
     id: "julia-calacatta",
     name: "Julia Calacatta",
     category: "ceramic",
@@ -150,35 +130,6 @@ const rawMaterials: Omit<Material, "image">[] = [
     swatch:
       "linear-gradient(125deg, hsl(40 35% 97%) 0%, hsl(40 25% 92%) 50%, hsl(35 20% 82%) 100%)",
   },
-  {
-    id: "luxor-gold",
-    name: "Luxor Gold",
-    category: "ceramic",
-    subCategory: "Effet Marbre",
-    format: "60×60 / 60×120 cm — Lappato brillant",
-    description: {
-      fr: "Effet marbre Calacatta or, brillant et somptueux.",
-      en: "Calacatta gold marble effect, glossy and sumptuous.",
-      de: "Calacatta-Gold Marmoroptik, glänzend und prachtvoll.",
-    },
-    swatch:
-      "linear-gradient(130deg, hsl(40 30% 95%) 0%, hsl(38 55% 65%) 40%, hsl(38 50% 45%) 55%, hsl(40 30% 92%) 100%)",
-  },
-  {
-    id: "pietra-iseo",
-    name: "Pietra d'Iseo Grey",
-    category: "ceramic",
-    subCategory: "Effet Pierre",
-    format: "60×60 / 75×150 cm — Rectifié",
-    description: {
-      fr: "Reproduction du Ceppo di Grè. Coloris gris neutre avec incrustations contrastées. Idéal en duo avec le bois.",
-      en: "Reproduction of Ceppo di Grè. Neutral grey with contrasting inclusions. Pairs beautifully with wood.",
-      de: "Reproduktion des Ceppo di Grè. Neutrales Grau mit kontrastierenden Einschlüssen. Ideal mit Holz.",
-    },
-    swatch:
-      "radial-gradient(circle at 30% 30%, hsl(30 8% 35%) 0%, transparent 12%), radial-gradient(circle at 70% 60%, hsl(30 8% 25%) 0%, transparent 10%), radial-gradient(circle at 50% 80%, hsl(35 10% 70%) 0%, transparent 14%), linear-gradient(135deg, hsl(30 8% 55%), hsl(30 6% 48%))",
-  },
-
   // SPC
   {
     id: "tree-natural",
