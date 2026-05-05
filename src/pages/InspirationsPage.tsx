@@ -4,6 +4,7 @@ import { X, Sparkles, Send } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingSocials } from "@/components/FloatingSocials";
+import { RoomComposer } from "@/components/RoomComposer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { materials, categoryLabels, type Material, type MaterialCategory } from "@/data/materials";
 
@@ -77,9 +78,9 @@ function detectStyle(selected: Material[]): keyof typeof copy.styles {
   const ids = selected.map((m) => m.id);
 
   const dark = ["wild-sunset", "harbour-brown", "doussie", "season-fall"];
-  const gold = ["luxor-gold", "calacatta-gold", "harbour-gold"];
+  const gold = ["calacatta-gold", "harbour-gold"];
   const light = ["harbour-white", "season-spring", "cement-cream", "julia-calacatta", "ash-serie", "oltre-sand"];
-  const marble = ["calacatta-gold", "elegance-calacatta", "xlab-calacatta", "vendome-calacatta", "vendome-vagues", "julia-calacatta", "luxor-gold"];
+  const marble = ["calacatta-gold", "elegance-calacatta", "xlab-calacatta", "vendome-calacatta", "julia-calacatta"];
 
   const darkScore = ids.filter((i) => dark.includes(i)).length;
   const goldScore = ids.filter((i) => gold.includes(i)).length;
@@ -328,6 +329,8 @@ const InspirationsPage = () => {
           </div>
         </aside>
       </div>
+
+      <RoomComposer />
 
       <Footer />
     </div>
