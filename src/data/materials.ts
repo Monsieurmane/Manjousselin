@@ -18,8 +18,20 @@ import ashSerie from "@/assets/materials/ash-serie.jpg";
 import flexAsh from "@/assets/materials/flex-ash.jpg";
 import oakClassic from "@/assets/materials/oak-classic.jpg";
 import doussieImg from "@/assets/materials/doussie.jpg";
+import terreOuidah from "@/assets/materials/terre-ouidah.jpg";
+import granitBamako from "@/assets/materials/granit-bamako.jpg";
+import zelligeOcre from "@/assets/materials/zellige-ocre.jpg";
+import travertinSable from "@/assets/materials/travertin-sable.jpg";
+import marbreVertForet from "@/assets/materials/marbre-vert-foret.jpg";
+import tadelaktTerracotta from "@/assets/materials/tadelakt-terracotta.jpg";
 
 const images: Record<string, string> = {
+  "terre-ouidah": terreOuidah,
+  "granit-bamako": granitBamako,
+  "zellige-ocre": zelligeOcre,
+  "travertin-sable": travertinSable,
+  "marbre-vert-foret": marbreVertForet,
+  "tadelakt-terracotta": tadelaktTerracotta,
   "calacatta-gold": calacattaGold,
   "elegance-calacatta": eleganceCalacatta,
   "xlab-calacatta": xlabCalacatta,
@@ -42,7 +54,7 @@ const images: Record<string, string> = {
   doussie: doussieImg,
 };
 
-export type MaterialCategory = "ceramic" | "spc" | "wood";
+export type MaterialCategory = "ceramic" | "spc" | "wood" | "stone" | "plaster";
 
 export interface Material {
   id: string;
@@ -50,10 +62,10 @@ export interface Material {
   category: MaterialCategory;
   subCategory?: string;
   format: string;
+  /** 1 = €, 2 = €€, 3 = €€€ */
+  priceIndex?: 1 | 2 | 3;
   description: { fr: string; en: string; de: string };
-  // Realistic photo of the material
   image: string;
-  // CSS background fallback
   swatch: string;
   source?: string;
 }
