@@ -351,4 +351,99 @@ export const categoryLabels: Record<MaterialCategory, { fr: string; en: string; 
   ceramic: { fr: "Carrelage Céramique", en: "Ceramic Tiles", de: "Keramikfliesen" },
   spc: { fr: "Plancher SPC", en: "SPC Flooring", de: "SPC-Boden" },
   wood: { fr: "Parquet Bois Naturel", en: "Natural Wood Parquet", de: "Naturholzparkett" },
+  stone: { fr: "Pierre Naturelle", en: "Natural Stone", de: "Naturstein" },
+  plaster: { fr: "Enduit Artisanal", en: "Artisanal Plaster", de: "Handwerklicher Putz" },
 };
+
+// New "Maison" signature materials with West African / Mediterranean accent
+const signatureMaterials: Omit<Material, "image">[] = [
+  {
+    id: "terre-ouidah",
+    name: "Terre de Ouidah",
+    category: "plaster",
+    subCategory: "Finition Brute",
+    format: "Enduit terre crue — application murale",
+    priceIndex: 2,
+    description: {
+      fr: "Enduit terre crue ocre, hommage aux murs de Ouidah. Texture vibrante, chaleur immédiate.",
+      en: "Ochre raw earth plaster, a tribute to the walls of Ouidah. Vibrant texture, instant warmth.",
+      de: "Ockerfarbener Lehmputz, eine Hommage an die Mauern von Ouidah. Lebendige Textur, sofortige Wärme.",
+    },
+    swatch: "linear-gradient(135deg, hsl(22 55% 55%), hsl(20 50% 45%))",
+  },
+  {
+    id: "granit-bamako",
+    name: "Granit de Bamako",
+    category: "stone",
+    subCategory: "Pierre africaine",
+    format: "Dalles 60×60 — Finition adoucie",
+    priceIndex: 3,
+    description: {
+      fr: "Granit sombre tacheté, minéralité brute et noble. Idéal en sol ou plan signature.",
+      en: "Dark speckled granite, raw and noble minerality. Ideal as a floor or signature countertop.",
+      de: "Dunkler gesprenkelter Granit, rohe und edle Mineralität. Ideal als Boden oder Signaturplatte.",
+    },
+    swatch: "radial-gradient(circle at 30% 30%, hsl(0 0% 90%) 0 2%, transparent 3%), radial-gradient(circle at 70% 60%, hsl(0 0% 90%) 0 1.5%, transparent 3%), hsl(220 8% 22%)",
+  },
+  {
+    id: "zellige-ocre",
+    name: "Zellige Ocre",
+    category: "ceramic",
+    subCategory: "Artisanat marocain",
+    format: "10×10 cm — Émail brillant irrégulier",
+    priceIndex: 2,
+    description: {
+      fr: "Zellige émaillé jaune ocre, fait à la main. Vibration de lumière, irrégularités assumées.",
+      en: "Hand-glazed ochre zellige tile. Vibrating light, embraced irregularities.",
+      de: "Handglasierte ockerfarbene Zellige-Fliese. Lebendiges Licht, gewollte Unregelmäßigkeiten.",
+    },
+    swatch: "linear-gradient(135deg, hsl(38 90% 55%), hsl(32 85% 50%))",
+  },
+  {
+    id: "travertin-sable",
+    name: "Travertin Sablé",
+    category: "stone",
+    subCategory: "Pierre méditerranéenne",
+    format: "60×60 / 60×120 cm — Finition sablée",
+    priceIndex: 3,
+    description: {
+      fr: "Travertin beige sablé, douceur tactile et tonalité chaude. Une signature minérale élégante.",
+      en: "Sandblasted beige travertine, tactile softness and warm tone. An elegant mineral signature.",
+      de: "Sandgestrahlter beigefarbener Travertin, weiche Haptik und warmer Ton. Eine elegante mineralische Signatur.",
+    },
+    swatch: "linear-gradient(135deg, hsl(38 30% 88%), hsl(35 25% 78%))",
+  },
+  {
+    id: "marbre-vert-foret",
+    name: "Marbre Vert Forêt",
+    category: "stone",
+    subCategory: "Marbre signature",
+    format: "Plaque sur mesure — Polie",
+    priceIndex: 3,
+    description: {
+      fr: "Marbre vert profond aux veines blanches sculpturales. Pour vasques, plans et accents forts.",
+      en: "Deep green marble with sculptural white veining. For vanities, countertops and bold accents.",
+      de: "Tiefgrüner Marmor mit skulpturaler weißer Aderung. Für Waschtische, Platten und markante Akzente.",
+    },
+    swatch: "linear-gradient(135deg, hsl(150 40% 18%), hsl(145 35% 25%))",
+  },
+  {
+    id: "tadelakt-terracotta",
+    name: "Tadelakt Terracotta",
+    category: "plaster",
+    subCategory: "Enduit chaux ciré",
+    format: "Application murale — Lissé ciré",
+    priceIndex: 2,
+    description: {
+      fr: "Tadelakt à la chaux, ciré et poli. Tonalité terracotta enveloppante, parfait en salle de bain.",
+      en: "Lime tadelakt, waxed and polished. Enveloping terracotta tone, perfect for bathrooms.",
+      de: "Kalk-Tadelakt, gewachst und poliert. Umhüllender Terrakotta-Ton, perfekt für Badezimmer.",
+    },
+    swatch: "linear-gradient(135deg, hsl(18 75% 55%), hsl(15 70% 48%))",
+  },
+];
+
+export const studioMaterials: Material[] = [
+  ...signatureMaterials.map((m) => ({ ...m, image: images[m.id] })),
+  ...materials,
+];
