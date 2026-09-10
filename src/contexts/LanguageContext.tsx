@@ -10,6 +10,7 @@ const translations = {
     about: { fr: "À propos", en: "About", de: "Über uns" },
     contact: { fr: "Contact", en: "Contact", de: "Kontakt" },
     videos: { fr: "Recherches", en: "Research", de: "Forschung" },
+    products: { fr: "Produits", en: "Products", de: "Produkte" },
   },
   hero: {
     subtitle: { fr: "MAISON DE DESIGN — Dakar, Sénégal", en: "Interior Design — Dakar, Senegal", de: "Innenarchitektur — Dakar, Senegal" },
