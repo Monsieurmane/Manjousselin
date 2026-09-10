@@ -13,6 +13,7 @@ import EditorialPage from "./pages/EditorialPage";
 import ArticlePage from "./pages/ArticlePage";
 import AboutPage from "./pages/AboutPage";
 import InspirationsPage from "./pages/InspirationsPage";
+import ProductsPage from "./pages/ProductsPage";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/editorial/:slug" element={<ArticlePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/inspirations" element={<InspirationsPage />} />
+              <Route path="/produits" element={<ProductsPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
